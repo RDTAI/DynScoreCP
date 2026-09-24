@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dynscorecp"
+version = "0.1.0"
+description = "Training-dynamics-aware nonconformity scores for conformal classification."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "ZXR"}]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+demo = ["torch>=2.0", "matplotlib>=3.7"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

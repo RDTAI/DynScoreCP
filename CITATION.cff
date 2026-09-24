@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use DynScoreCP in your research, please cite this software."
+title: "DynScoreCP: Training-Dynamics-Aware Nonconformity Scores"
+type: software
+authors:
+  - family-names: "ZXR"
+version: 0.1.0
+date-released: 2026-09-24
+license: MIT
+repository-code: "https://github.com/RDTAI/DynScoreCP"
