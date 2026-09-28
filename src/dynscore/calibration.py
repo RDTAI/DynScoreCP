@@ -21,7 +21,8 @@ def conformal_quantile(calibration_scores: Any, *, alpha: float) -> float:
         raise ValueError("alpha must lie strictly between 0 and 1")
     scores = _scores_1d(calibration_scores)
     rank = int(np.ceil((scores.size + 1) * (1.0 - alpha)))
-    rank = min(rank, scores.size)
+    if rank > scores.size:
+        return float("inf")
     return float(np.partition(scores, rank - 1)[rank - 1])
 
 

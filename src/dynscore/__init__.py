@@ -1,6 +1,7 @@
 """DynScoreCP: difficulty-aware conformal classification."""
 
 from .calibration import SplitConformalClassifier, conformal_quantile
+from .checkpoints import checkpoint_features, dynamic_score
 from .difficulty import TrainingDynamicsDifficulty, forgetting_events
 from .metrics import evaluate_prediction_sets
 from .rectification import ConditionalCDFRectifier, LocationScaleRectifier
@@ -13,6 +14,8 @@ __all__ = [
     "TrainingDynamicsDifficulty",
     "aps_score",
     "conformal_quantile",
+    "checkpoint_features",
+    "dynamic_score",
     "evaluate_prediction_sets",
     "forgetting_events",
     "lac_score",
@@ -21,4 +24,4 @@ __all__ = [
     "softmax",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
