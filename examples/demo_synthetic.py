@@ -71,6 +71,7 @@ def plot_difficulty_results(
     test_x: np.ndarray,
     test_difficulty: np.ndarray,
     results: dict[str, dict[str, object]],
+    alpha: float = 0.1,
 ) -> None:
     import matplotlib
 
@@ -109,7 +110,7 @@ def plot_difficulty_results(
             width,
             label=method,
         )
-    axes[2].axhline(0.9, color="black", linestyle="--", linewidth=1, label="target")
+    axes[2].axhline(1 - alpha, color="black", linestyle="--", linewidth=1, label="target")
     axes[2].set_xticks(np.arange(5), ["easiest", "2", "3", "4", "hardest"])
     axes[2].set_ylim(0.55, 1.02)
     axes[2].set_ylabel("Coverage")
@@ -273,6 +274,7 @@ def run(seed: int, epochs: int, alpha: float, output_dir: Path) -> dict[str, obj
         test_x,
         test_difficulty,
         results,
+        alpha,
     )
     return report
 
